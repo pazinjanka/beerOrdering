@@ -1,0 +1,4 @@
+NOTE: Gem.source_index is deprecated, use Specification. It will be removed on or after 2011-11-01.
+Gem.source_index called from /home/martina/.rvm/gems/ruby-1.9.2-p290/gems/rails-2.3.14/lib/rails/gem_dependency.rb:21.
+NOTE: Gem::SourceIndex#initialize is deprecated with no replacement. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#initialize called from /home/martina/.rvm/gems/ruby-1.9.2-p290/gems/rails-2.3.14/lib/rails/vendor_gem_source_index.rb:100.

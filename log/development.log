@@ -1,0 +1,213 @@
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBeers (20111217185608)
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "beers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20111217185608')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("beers")[0m
+
+
+Processing BeersController#index (for 127.0.0.1 at 2011-12-17 20:04:13) [GET]
+  [4;36;1mBeer Load (0.7ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://127.0.0.1/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2011-12-17 20:04:16) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 110ms (View: 100, DB: 0) | 200 OK [http://127.0.0.1/beers/new]
+
+
+Processing BeersController#create (for 127.0.0.1 at 2011-12-17 20:04:22) [POST]
+  Parameters: {"authenticity_token"=>"J1drwmDvAfhCf8xDbd7Ar8zLh0yFsf4l1lohxT71Yis=", "beer"=>{"name"=>"O\xC5\xBEujsko ", "price"=>"12"}, "commit"=>"Create"}
+  [4;35;1mBeer Create (0.5ms)[0m   [0mINSERT INTO "beers" ("name", "price", "created_at", "updated_at") VALUES('Ožujsko ', 12.0, '2011-12-17 19:04:22', '2011-12-17 19:04:22')[0m
+Redirected to http://127.0.0.1:3000/beers/1
+Completed in 29ms (DB: 0) | 302 Found [http://127.0.0.1/beers]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2011-12-17 20:04:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBeer Load (0.4ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 32ms (View: 20, DB: 0) | 200 OK [http://127.0.0.1/beers/1]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2011-12-17 20:04:24) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://127.0.0.1/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2011-12-17 20:04:28) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/beers/new]
+
+
+Processing BeersController#create (for 127.0.0.1 at 2011-12-17 20:04:36) [POST]
+  Parameters: {"authenticity_token"=>"J1drwmDvAfhCf8xDbd7Ar8zLh0yFsf4l1lohxT71Yis=", "beer"=>{"name"=>"Karlova\xC4\x8Dko", "price"=>"15"}, "commit"=>"Create"}
+  [4;36;1mBeer Create (0.3ms)[0m   [0;1mINSERT INTO "beers" ("name", "price", "created_at", "updated_at") VALUES('Karlovačko', 15.0, '2011-12-17 19:04:36', '2011-12-17 19:04:36')[0m
+Redirected to http://127.0.0.1:3000/beers/2
+Completed in 66ms (DB: 0) | 302 Found [http://127.0.0.1/beers]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2011-12-17 20:04:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mBeer Load (0.3ms)[0m   [0mSELECT * FROM "beers" WHERE ("beers"."id" = 2) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/beers/2]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2011-12-17 20:04:38) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://127.0.0.1/beers]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-12-17 20:09:03) [GET]
+  [4;35;1mOrder Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: orders: SELECT * FROM "orders" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: orders: SELECT * FROM "orders" ):
+  app/controllers/orders_controller.rb:5:in `index'
+  <internal:prelude>:10:in `synchronize'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `block in handle_spawn_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/spawn_manager.rb:219:in `block (2 levels) in spawn_rails_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/spawn_manager.rb:214:in `block in spawn_rails_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  /home/martina/.passenger/standalone/3.0.9-x86-ruby1.9.2-linux-gcc4.5.2-1002/support/helper-scripts/passenger-spawn-server:99:in `<main>'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBeers (20111217185608)
+Migrating to CreateOrders (20111217190709)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "amount" integer, "beer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20111217190709')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("beers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("orders")[0m
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-12-17 20:09:27) [GET]
+  [4;36;1mOrder Load (0.5ms)[0m   [0;1mSELECT * FROM "orders" [0m
+Rendering template within layouts/orders
+Rendering orders/index
+Completed in 118ms (View: 110, DB: 0) | 200 OK [http://127.0.0.1/orders]
+
+
+Processing OrdersController#new (for 127.0.0.1 at 2011-12-17 20:09:30) [GET]
+Rendering template within layouts/orders
+Rendering orders/new
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://127.0.0.1/orders/new]
+
+
+Processing OrdersController#new (for 127.0.0.1 at 2011-12-17 20:10:34) [GET]
+Rendering template within layouts/orders
+Rendering orders/new
+  [4;35;1mBeer Load (0.3ms)[0m   [0mSELECT * FROM "beers" [0m
+Completed in 156ms (View: 137, DB: 0) | 200 OK [http://127.0.0.1/orders/new]
+
+
+Processing OrdersController#create (for 127.0.0.1 at 2011-12-17 20:10:46) [POST]
+  Parameters: {"authenticity_token"=>"J1drwmDvAfhCf8xDbd7Ar8zLh0yFsf4l1lohxT71Yis=", "order"=>{"name"=>"Martina", "amount"=>"1", "beer_id"=>"1"}, "commit"=>"Create"}
+  [4;36;1mOrder Create (0.3ms)[0m   [0;1mINSERT INTO "orders" ("name", "amount", "beer_id", "created_at", "updated_at") VALUES('Martina', 1, 1, '2011-12-17 19:10:46', '2011-12-17 19:10:46')[0m
+Redirected to http://127.0.0.1:3000/orders/1
+Completed in 27ms (DB: 0) | 302 Found [http://127.0.0.1/orders]
+
+
+Processing OrdersController#show (for 127.0.0.1 at 2011-12-17 20:10:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mOrder Load (0.2ms)[0m   [0mSELECT * FROM "orders" WHERE ("orders"."id" = 1) [0m
+Rendering template within layouts/orders
+Rendering orders/show
+  [4;36;1mBeer Load (3.5ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Completed in 89ms (View: 72, DB: 4) | 200 OK [http://127.0.0.1/orders/1]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-12-17 20:10:47) [GET]
+  [4;35;1mOrder Load (1.3ms)[0m   [0mSELECT * FROM "orders" [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;36;1mBeer Load (0.2ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Completed in 32ms (View: 23, DB: 2) | 200 OK [http://127.0.0.1/orders]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-12-17 20:11:22) [GET]
+  [4;35;1mOrder Load (0.5ms)[0m   [0mSELECT * FROM "orders" [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;36;1mBeer Load (0.3ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Completed in 96ms (View: 89, DB: 1) | 200 OK [http://127.0.0.1/orders]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-12-17 20:13:00) [GET]
+  [4;35;1mOrder Load (0.5ms)[0m   [0mSELECT * FROM "orders" [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;36;1mBeer Load (0.2ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://127.0.0.1/]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-12-17 20:13:04) [GET]
+  [4;35;1mOrder Load (0.5ms)[0m   [0mSELECT * FROM "orders" [0m
+Rendering template within layouts/orders
+Rendering orders/index
+  [4;36;1mBeer Load (0.3ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Completed in 79ms (View: 68, DB: 1) | 200 OK [http://127.0.0.1/]

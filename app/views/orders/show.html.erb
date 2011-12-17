@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @order.name %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%=h @order.amount %>
+</p>
+
+<p>
+  <b>Beer:</b>
+  <%=h @order.beer %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
